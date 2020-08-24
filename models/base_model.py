@@ -20,6 +20,7 @@ class BaseModel():
     #def name(self):
         #return 'BaseModel'
     global gpu_ids
+
     global isTrain
     #self.opt = opt
     global Tensor
@@ -32,9 +33,9 @@ class BaseModel():
     def initialize(self):
         
         #gpu_ids 默认是0
-        self.gpu_ids = opt.gpu_ids
+        self.gpu_ids = gpu_ids
         #是否训练
-        self.isTrain = opt.isTrain
+        self.isTrain = isTrain
         #是否有gpu
         self.Tensor = torch.cuda.FloatTensor if self.gpu_ids else torch.Tensor
         #存储路径
