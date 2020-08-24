@@ -3,6 +3,11 @@ import torch.nn as nn
 from torchvision import models
 #from tools.torchsummary import summary
 
+# Defines the generator that consists of Unet blocks between a few
+# downsampling/upsampling operations.
+# Code and idea originally from usuyama's architecture.
+# https://github.com/usuyama/pytorch-unet/
+
 def convrelu(in_channels, out_channels, kernel, padding):
     return nn.Sequential(
         nn.Conv2d(in_channels, out_channels, kernel, padding=padding),

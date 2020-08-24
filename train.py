@@ -46,7 +46,7 @@ save_epoch_freq = 5
 
 # new learning rate
 new_lr = True
-'''
+
 for epoch in range(1, niter + niter_decay + 1):
     epoch_start_time = time.time()
     for i, data in enumerate(dataset):
@@ -95,4 +95,3 @@ for epoch in range(1, niter + niter_decay + 1):
     else:
         if epoch > niter:
             model.update_learning_rate()
-'''
