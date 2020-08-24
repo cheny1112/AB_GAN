@@ -3,7 +3,7 @@ import time
 #from data.data_loader import CreateDataLoader
 #from models.models import create_model
 #from util.visualizer import Visualizer
-from models.Unet_generator import UNet
+from models.EnlightenGAN import 
 from data.dataset import train_data
 from data.data_loader import load_data
 
@@ -22,7 +22,7 @@ dataset = load_data(train_data)
 #dataset_size = len(dataset)
 #print('#training images = %d' % dataset_size)
 
-#model = Unet()
+model = Unet()
 #visualizer = Visualizer(opt)
 
 total_steps = 0

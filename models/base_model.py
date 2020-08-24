@@ -19,18 +19,18 @@ name = 'experiment_name'
 class BaseModel():
     #def name(self):
         #return 'BaseModel'
+    global gpu_ids
+    global isTrain
+    #self.opt = opt
+    global Tensor
 
+    global save_dir
+
+    global checkpoints_dir
+
+    global name
     def initialize(self):
-        global gpu_ids
-        global isTrain
-        #self.opt = opt
-        global Tensor
-
-        global save_dir
-
-        global checkpoints_dir
-
-        global name
+        
         #gpu_ids 默认是0
         self.gpu_ids = opt.gpu_ids
         #是否训练
