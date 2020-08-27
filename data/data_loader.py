@@ -1,5 +1,5 @@
 from torch.utils.data import DataLoader
-from dataset import train_data
+from data.dataset import train_data
 
 def load_data(train_data):
 

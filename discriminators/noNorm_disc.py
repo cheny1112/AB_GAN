@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+from torchvision import models
+
 class NoNormDiscriminator(nn.Module):
     def __init__(self, input_nc, ndf=64, n_layers=3, use_sigmoid=False, gpu_ids=[]):
         super(NoNormDiscriminator, self).__init__()

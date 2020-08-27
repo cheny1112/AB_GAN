@@ -6,10 +6,11 @@ from torch.autograd import Variable
 import itertools
 import tools.util as util
 from tools.image_pool import ImagePool
-from base_model import BaseModel
-import networks
+from models.base_model import BaseModel
+import models.networks
 import sys
 
+which_direction = 'AtoB'
 
 class EnlightenGAN(BaseModel):
     def name(self):
@@ -34,7 +35,7 @@ class EnlightenGAN(BaseModel):
         use_wgan = 0.0
         use_mse = True
         beta1 = 0.5
-        which_direction = 'AtoB'
+        global which_direction
         new_lr = True
         niter_decay = 100
         l1 = 10.0
@@ -107,7 +108,7 @@ class EnlightenGAN(BaseModel):
         print('-----------------------------------------------')
 
     def set_input(self, input):
-        AtoB = self.which_direction == 'AtoB'
+        AtoB = which_direction == 'AtoB'
         input_A = input['A' if AtoB else 'B']
         input_B = input['B' if AtoB else 'A']
         input_img = input['input_img']

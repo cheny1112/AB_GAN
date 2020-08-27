@@ -2,13 +2,13 @@ import os
 import torch
 
 # GPUid
-gpu_ids = 0
+gpu_ids = '0'
 
 # 是否训练
 isTrain = True
 
 # 是否有gpu, 若是有就使用
-Tensor = torch.cuda.FloatTensor if self.gpu_ids else torch.Tensor
+Tensor = torch.cuda.FloatTensor if gpu_ids else torch.Tensor
 
 # 存储路径
 checkpoints_dir = 'py_lang/Adjust_brightness/checkpoints'

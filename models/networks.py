@@ -9,6 +9,8 @@ import torch.nn.functional as F
 import numpy as np
 # from torch.utils.serialization import load_lua
 from tools.batchnorm import SynchronizedBatchNorm2d as SynBN2d
+
+from generators.Unet_generator import UnetGenerator, Unet_resize_conv
 ###############################################################################
 # Functions
 ###############################################################################
@@ -79,6 +81,13 @@ def get_norm_layer(norm_type='instance'):
     return norm_layer
 
 # 这个是生成器的网络
+# 看起来其实也不复杂，只是这个网络会选择一个最优解
+# 或者说是之前做对比实验的时候，留下来的
+# 参数指定总共有这么几项
+# 'resnet_9blocks' ->ResnetGenerator
+# 'resnet_6blocks' ->ResnetGenerator
+# 'unet_128/256/512' -> UnetGenerator
+# ''
 
 def define_G(input_nc, output_nc, ngf, which_model_netG, norm='batch', use_dropout=False, gpu_ids=[], skip=False, opt=None):
     netG = None
